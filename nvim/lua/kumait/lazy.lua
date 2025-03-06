@@ -16,4 +16,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("kumait.plugins")
+require("lazy").setup("kumait.plugins", {
+  checker = {
+    enabled = true,
+    notify = true,
+  },
+  change_detection = {
+    notify = false,
+  },
+})
